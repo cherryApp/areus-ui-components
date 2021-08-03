@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { IconCounterFormControlComponent } from './controls/icon-counter-form-control/icon-counter-form-control.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -11,20 +13,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
-import { AppComponent } from './app.component';
-import { ServiceEditorComponent } from './dialog/service-editor/service-editor.component';
-import { AreusFormControlsModule } from './areus-form-controls/areus-form-controls.module';
-
 @NgModule({
   declarations: [
-    AppComponent,
-    ServiceEditorComponent
+    IconCounterFormControlComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule,
     MatCheckboxModule,
     MatCardModule,
     MatSlideToggleModule,
@@ -32,9 +28,9 @@ import { AreusFormControlsModule } from './areus-form-controls/areus-form-contro
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    AreusFormControlsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [
+    IconCounterFormControlComponent,
+  ]
 })
-export class AppModule { }
+export class AreusFormControlsModule { }

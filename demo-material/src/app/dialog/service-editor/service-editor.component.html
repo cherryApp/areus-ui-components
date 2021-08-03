@@ -3,9 +3,11 @@
   <span class="material-icons">close</span>
 </h1>
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.animal">
+    <app-icon-counter-form-control [value]="'test'" placeholder="Phone number" [required]="true">
+    </app-icon-counter-form-control>
+    <span matSuffix class="material-icons">phone</span>
+    <mat-hint>Include area code</mat-hint>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
