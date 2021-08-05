@@ -8,6 +8,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ServiceEditorComponent implements OnInit {
 
+  testValue: string = 'test';
+
   constructor(
     public dialogRef: MatDialogRef<ServiceEditorComponent>,
     @Inject(MAT_DIALOG_DATA) public data: {animal: string},

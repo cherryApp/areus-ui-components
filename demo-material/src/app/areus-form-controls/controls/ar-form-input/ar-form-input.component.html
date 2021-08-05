@@ -1,0 +1,14 @@
+<div flLayout="column" fxLayoutGap="1em" fxLayoutGap.xs="0px">
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="7px" fxLayoutGap.sm="0px">
+    <mat-form-field
+      fxFlex
+      [appearance]="appearance"
+      [floatLabel]="floatLabel">
+        <mat-label *ngIf="labelPosition === 'inner'">{{ label }}</mat-label>
+        <input [formControl]="valueControl" matInput #input [attr.maxlength]="maxlength" [placeholder]="placeholder">
+        <mat-hint [align]="hintAlign">
+          {{ input.value?.length || 0}}/{{ maxlength }}
+        </mat-hint>
+    </mat-form-field>
+  </div>
+</div>

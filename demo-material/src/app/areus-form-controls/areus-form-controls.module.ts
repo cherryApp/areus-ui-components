@@ -12,15 +12,18 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ArFormInputComponent } from './controls/ar-form-input/ar-form-input.component';
 
 @NgModule({
   declarations: [
     IconCounterFormControlComponent,
+    ArFormInputComponent,
   ],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatCheckboxModule,
     MatCardModule,
     MatSlideToggleModule,
@@ -31,6 +34,7 @@ import { MatInputModule } from '@angular/material/input';
   ],
   exports: [
     IconCounterFormControlComponent,
+    ArFormInputComponent,
   ]
 })
 export class AreusFormControlsModule { }
