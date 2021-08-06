@@ -31,6 +31,10 @@ export class ArFormInputComponent implements ControlValueAccessor, OnInit {
   }
   private _floatLabel: boolean = false;
 
+  get value(): string {
+    return this.formGroup.controls.value.value;
+  }
+
   valueControl: FormControl = new FormControl();
   formGroup: FormGroup = new FormGroup({
     value: this.valueControl
@@ -46,14 +50,16 @@ export class ArFormInputComponent implements ControlValueAccessor, OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.formGroup.valueChanges.subscribe(
+      values => this.onChange(this.value)
+    );
   }
 
-  onChange = (newValue: string) => {
-    this.valueControl.setValue(newValue);
-  };
+  onChange = (newValue: string) => {};
   onTouched = () => { };
   writeValue(newValue: string): void {
-    this.onChange(newValue);
+    this.formGroup.controls.value.setValue(newValue);
+    this.onChange(this.value);
   }
 
   registerOnChange(fn: (newValue: string) => void): void {
