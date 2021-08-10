@@ -1,0 +1,109 @@
+$frame-color: rgb(230, 231, 234);
+$slide-checked-color: rgb(228, 13, 113);
+
+:host-context(hg-form-textarea) {
+  width: 100%;
+  display: block;
+}
+
+.field__container {
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  .field__label {
+    font-weight: 600;
+    font-size: 1em;
+    margin: 0 0 .5em 0;
+  }
+
+  .field__inner {
+    padding: 1em 0;
+    position: relative;
+
+    .field__item {
+      border: none;
+      border-radius: .5em;
+      box-shadow: 0 0 8px 3px darken($frame-color, 3);
+      height: 2.5em;
+      margin-top: .65em;
+      padding: 0 1em;
+      line-height: 2.5em;
+      font-weight: 500;
+      &.unchecked {
+        opacity: .5;
+        box-shadow: none;
+      }
+    }
+
+    .field__inner-title {
+      display: inline-block;
+      input {
+        text-align: left;
+        font-size: 1em;
+        border: none;
+        outline: none;
+        max-width: 10em;
+      }
+    }
+
+    .field__inner-right {
+      float: right;
+      padding-top: .5em;
+      .field__inner-type {
+        color: darken($frame-color, 30);
+        position: relative;
+        top: -.5em;
+        display: inline-block;
+        margin-right: 1.5em;
+      }
+      .field__inner-price {
+        position: relative;
+        top: -.5em;
+        display: inline-block;
+        padding-right: 1em;
+        input {
+          text-align: right;
+          border: none;
+          outline: none;
+          max-width: 10em;
+        }
+        sup {
+          font-size: .65em;
+          position: absolute;
+          right: .5em;
+          top: -1px;
+        }
+      }
+    }
+  }
+}
+
+// ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+//   background-color: blue;
+// }
+::ng-deep .mat-slide-toggle {
+  .mat-slide-toggle-thumb {
+    background-color: white;
+  }
+
+  &.mat-checked:not(.mat-disabled) {
+    opacity: 1;
+  }
+
+  &.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: white;
+  }
+
+  .mat-slide-toggle-thumb-container,
+  &.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb-container {
+    top: 3px;
+    left: 3px;
+  }
+  .mat-slide-toggle-bar,
+  &.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: $slide-checked-color;
+    height: 26px;
+    width: 44px;
+    line-height: 24px;
+    border-radius: 24px;
+  }
+}

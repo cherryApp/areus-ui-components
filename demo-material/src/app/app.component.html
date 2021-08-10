@@ -1,5 +1,34 @@
 <div class="button-row">
-  <button (click)="openServiceDialog()" mat-raised-button color="primary">
-    Add New Service
-  </button>
+  <button
+    (click)="openServiceDialog()"
+    mat-raised-button
+    color="primary"
+  > Add New Service </button>
+</div>
+<div
+  fxLayout="column"
+  fxLayoutGap="1.5em"
+  class="test"
+  [style.margin-top.em]="3"
+  [style.padding.em]="2"
+  [style.width.%]="40"
+>
+  <hg-form-input
+    [label]="testService.label"
+    [maxLength]="testService.maxLength"
+    [(ngModel)]="testService.value"
+  ></hg-form-input>
+
+  <hg-form-textarea
+    [label]="testTextarea.label"
+    [maxLength]="testTextarea.maxLength"
+    [(ngModel)]="testTextarea.value"
+  ></hg-form-textarea>
+
+  <hg-form-price-grid
+    [title]="'Árlista'"
+    [(ngModel)]="priceItems"
+  ></hg-form-price-grid>
+
+  {{ priceItems | json }}
 </div>

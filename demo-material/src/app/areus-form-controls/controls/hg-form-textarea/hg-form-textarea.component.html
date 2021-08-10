@@ -1,0 +1,30 @@
+<div
+  class="field__container"
+  [formGroup]="formGroup"
+  flLayout="column"
+  fxLayoutGap="1em"
+  fxLayoutGap.xs="0px"
+>
+  <div
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutGap="7px"
+    fxLayoutGap.sm="0px"
+  >
+    <div class="field__label"> {{ label }} </div>
+    <div class="field__inner">
+      <textarea
+        class="field__input"
+        name="value"
+        formControlName="value"
+        #input
+        [attr.maxlength]="maxLength"
+        [attr.rows]="rows"
+        [placeholder]="placeholder"
+      ></textarea>
+      <span class="field__hint">
+        {{ input.value?.length || 0}} / {{ maxLength }}
+      </span>
+    </div>
+  </div>
+</div>

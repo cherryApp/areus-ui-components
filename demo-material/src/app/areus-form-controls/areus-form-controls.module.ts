@@ -13,11 +13,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ArFormInputComponent } from './controls/ar-form-input/ar-form-input.component';
+import { HgFormInputComponent } from './controls/hg-form-input/hg-form-input.component';
+import { HgFormTextareaComponent } from './controls/hg-form-textarea/hg-form-textarea.component';
+import { HgFormPriceGridComponent } from './controls/hg-form-price-grid/hg-form-price-grid.component';
 
 @NgModule({
   declarations: [
     IconCounterFormControlComponent,
     ArFormInputComponent,
+    HgFormInputComponent,
+    HgFormTextareaComponent,
+    HgFormPriceGridComponent,
   ],
   imports: [
     CommonModule,
@@ -35,6 +41,9 @@ import { ArFormInputComponent } from './controls/ar-form-input/ar-form-input.com
   exports: [
     IconCounterFormControlComponent,
     ArFormInputComponent,
+    HgFormInputComponent,
+    HgFormTextareaComponent,
+    HgFormPriceGridComponent,
   ]
 })
 export class AreusFormControlsModule { }

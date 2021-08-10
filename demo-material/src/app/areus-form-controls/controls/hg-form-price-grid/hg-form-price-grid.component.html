@@ -1,0 +1,31 @@
+<div
+  class="field__container"
+  [formGroup]="formGroup"
+  flLayout="column"
+  fxLayoutGap="1em"
+  fxLayoutGap.xs="0px"
+>
+  <div class="field__label"> {{ title }} </div>
+  <div class="field__inner">
+    <div
+      *ngFor="let item of controlList"
+      class="field__item"
+      [class.unchecked]="!item.value"
+    >
+      <div class="field__inner-title">
+        <input [disabled]="!item.value" (input)="onTitleChanged($event, item)" [value]="item.title" type="numer">
+      </div>
+      <div class="field__inner-right">
+        <div class="field__inner-price" *ngIf="item.price !== undefined">
+          <input [disabled]="!item.value" (input)="onPriceChanged($event, item)" [value]="item.price" type="numer"> <sup>Ft</sup>
+        </div>
+        <div class="field__inner-type" *ngIf="item.itemType">/ {{ item.itemType }} </div>
+        <mat-slide-toggle
+          (change)="onChange(value)"
+          [formControlName]="item.key || ''"
+          [checked]="item.value"
+        ></mat-slide-toggle>
+      </div>
+    </div>
+  </div>
+</div>

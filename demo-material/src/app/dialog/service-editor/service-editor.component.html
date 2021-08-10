@@ -3,14 +3,7 @@
   <span class="material-icons">close</span>
 </h1>
 <div mat-dialog-content>
-  <ar-form-input [(ngModel)]="testValue" [maxlength]="30" [hintAlign]="'start'" [placeholder]="'name...'"></ar-form-input>
-  {{ testValue }}
-  <!-- <mat-form-field>
-    <app-icon-counter-form-control [value]="'test'" placeholder="Phone number" [required]="true">
-    </app-icon-counter-form-control>
-    <span matSuffix class="material-icons">phone</span>
-    <mat-hint>Include area code</mat-hint>
-  </mat-form-field> -->
+  <hg-form-input [(ngModel)]="testValue" [maxlength]="30" [hintAlign]="'start'" [placeholder]="'name...'"></hg-form-input>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onCancel()">No Thanks</button>

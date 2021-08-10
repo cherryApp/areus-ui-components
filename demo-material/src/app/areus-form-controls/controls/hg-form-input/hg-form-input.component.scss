@@ -1,0 +1,38 @@
+$frame-color: rgb(230,231,234);
+
+:host-context(hg-form-input) {
+  width: 100%;
+  display: block;
+}
+.field__container {
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  .field__label {
+    font-weight: 600;
+    font-size: 1em;
+    margin: 0 0 .5em 0;
+  }
+  .field__inner {
+    border: solid 2px $frame-color;
+    border-radius: 0.5em;
+    padding: 1em 1em 2em 1em;
+    position: relative;
+    .field__input {
+      background: none;
+      color: rgb(30, 30, 30);
+      font-weight: lighter;
+      width: 100%;
+      border: none;
+      font-size: 1.2em;
+      display: block;
+      outline: none;
+    }
+    .field__hint {
+      color: darken($color: $frame-color, $amount: 15);
+      font-weight: bold;
+      font-size: 0.8em;
+      position: absolute;
+      bottom: .5em;
+      left: 1.3em;
+    }
+  }
+}
