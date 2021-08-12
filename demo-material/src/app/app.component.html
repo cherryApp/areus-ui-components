@@ -6,6 +6,7 @@
   > Add New Service </button>
 </div>
 <div
+  *ngIf="service$ | async as service"
   fxLayout="column"
   fxLayoutGap="1.5em"
   class="test"
@@ -14,21 +15,35 @@
   [style.width.%]="40"
 >
   <hg-form-input
-    [label]="testService.label"
-    [maxLength]="testService.maxLength"
-    [(ngModel)]="testService.value"
+    [label]="'Szolgáltatásod rövid címe'"
+    [maxLength]="75"
+    [(ngModel)]="service.title"
   ></hg-form-input>
-
   <hg-form-textarea
-    [label]="testTextarea.label"
-    [maxLength]="testTextarea.maxLength"
-    [(ngModel)]="testTextarea.value"
+    [label]="'Szolgáltatásod bővebb kifejtése'"
+    [maxLength]="250"
+    [(ngModel)]="service.description"
   ></hg-form-textarea>
-
   <hg-form-price-grid
     [title]="'Árlista'"
-    [(ngModel)]="priceItems"
+    [(ngModel)]="service.priceItems"
   ></hg-form-price-grid>
 
-  {{ priceItems | json }}
+  <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="auto" fxFlexFill>
+    <div fxLayout="row" fxLayoutGap="1em">
+      <mat-slide-toggle
+        [(ngModel)]="service.isVisible"
+      ></mat-slide-toggle>
+      <span [style.fontSize]="'1.2em'">Szolgáltatás megjelenítve</span>
+    </div>
+    <button class="card__save-button" mat-stroked-button>
+        Változtatások jóváhagyása
+      </button>
+  </div>
+
+
+</div>
+
+<div>
+  {{ service$ | async | json }}
 </div>

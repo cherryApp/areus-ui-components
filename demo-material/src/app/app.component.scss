@@ -1,0 +1,14 @@
+$slide-checked-color: rgb(228, 13, 113);
+
+::ng-deep span {
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.card__save-button {
+  border: solid 1px;
+  border-radius: .5em;
+  color:rgb(240, 240, 240);
+  background-color: $slide-checked-color;
+  font-size: 1em;
+  padding: .2em 1em;
+}
