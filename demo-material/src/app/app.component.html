@@ -14,6 +14,19 @@
   [style.padding.em]="2"
   [style.width.%]="40"
 >
+
+<div class="card__category" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="auto" fxFlexFill>
+  <div class="card__service" fxLayout="row" fxLayoutGap=".5em">
+    <mat-icon class="card__service-icon">directions_car</mat-icon>
+    <span class="card__service-text" [style.fontSize]="'1.2em'">
+      Autófényezés, karosszériajavítás
+    </span>
+  </div>
+  <button class="card__service-button" mat-stroked-button>
+      Módosít
+    </button>
+</div>
+
   <hg-form-input
     [label]="'Szolgáltatásod rövid címe'"
     [maxLength]="75"
@@ -40,8 +53,6 @@
         Változtatások jóváhagyása
       </button>
   </div>
-
-
 </div>
 
 <div>

@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
@@ -29,6 +30,7 @@ import { AreusFormControlsModule } from './areus-form-controls/areus-form-contro
     ReactiveFormsModule,
     MatCheckboxModule,
     MatCardModule,
+    MatIconModule,
     MatSlideToggleModule,
     MatDialogModule,
     MatButtonModule,

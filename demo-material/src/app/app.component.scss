@@ -1,4 +1,5 @@
 $slide-checked-color: rgb(228, 13, 113);
+$frame-color: rgb(230, 231, 234);
 
 ::ng-deep span {
   font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -7,8 +8,33 @@ $slide-checked-color: rgb(228, 13, 113);
 .card__save-button {
   border: solid 1px;
   border-radius: .5em;
-  color:rgb(240, 240, 240);
+  color: rgb(240, 240, 240);
   background-color: $slide-checked-color;
   font-size: 1em;
   padding: .2em 1em;
+}
+
+.card__category {
+  background-color: $frame-color;
+  padding: .4em 1em;
+  border-radius: .5em;
+  color: darken($color: $frame-color, $amount: 50);
+
+  .card__service {
+    font-size: 1.1em;
+    font-weight: 600;
+
+    .card__service-icon {
+      font-size: 1.6em;
+    }
+  }
+
+  .card__service-button {
+    border: solid 1px darken($frame-color, 30);
+    border-radius: .5em;
+    background-color: transparent;
+    font-size: 1em;
+    padding: 0 1.3em;
+    font-weight: 500;
+  }
 }
