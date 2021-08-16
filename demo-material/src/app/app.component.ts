@@ -23,8 +23,9 @@ export class AppComponent {
 
   openServiceDialog(): void {
     this.dialog.open(ServiceEditorComponent, {
-      width: '400px',
-      data: { animal: this.animal },
+      panelClass: 'service-editor-dialog',
+      width: '575px',
+      data: this.service$
     }).afterClosed().subscribe(
       data => console.log(data)
     );

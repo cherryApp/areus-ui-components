@@ -10,7 +10,7 @@ import { MatFormFieldAppearance, FloatLabelType } from '@angular/material/form-f
 export class HgFormTextareaComponent implements ControlValueAccessor, OnInit {
 
   @Input() maxLength: number = 10;
-  @Input() rows: number = 5;
+  @Input() rows: number = 4;
   @Input() hintAlign: 'start' | 'end' = 'start';
   @Input() label: string = 'Label';
   @Input() placeholder: string = 'placeholder';

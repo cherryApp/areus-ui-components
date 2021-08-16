@@ -1,11 +1,61 @@
-<h1 mat-dialog-title>
-  Szolgáltatás hozzáadása
-  <span class="material-icons">close</span>
-</h1>
-<div mat-dialog-content>
-  <hg-form-input [(ngModel)]="testValue" [maxlength]="30" [hintAlign]="'start'" [placeholder]="'name...'"></hg-form-input>
+<div
+  *ngIf="service$ | async as service"
+  fxLayout="column"
+  fxLayoutGap=".5em"
+  class="test"
+  [style.margin-top.em]="0"
+  [style.padding.em]=".3"
+>
+
+<div class="card__header" fxLayout="row" fxLayoutAlign="start center" fxFlexFill fxLayoutGap="auto">
+  <div class="card__header-title">
+    Szolgáltatás hozzáadása
+  </div>
+  <button class="card__header-button" mat-stroked-button [mat-dialog-close]>
+    <mat-icon>close</mat-icon>
+  </button>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">No Thanks</button>
-  <button mat-button cdkFocusInitial>Ok</button>
+
+
+<div class="field__label">
+  Szolgáltatásod kategóriája
+</div>
+<div class="card__category" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="auto" fxFlexFill>
+  <div class="card__service" fxLayout="row" fxLayoutGap=".5em">
+    <mat-icon class="card__service-icon">directions_car</mat-icon>
+    <span class="card__service-text" [style.fontSize]="'1.1em'">
+      Autófényezés, karosszériajavítás
+    </span>
+  </div>
+  <button class="card__service-button" mat-stroked-button>
+      Módosít
+    </button>
+</div>
+
+  <hg-form-input
+    [label]="'Szolgáltatásod rövid címe'"
+    [maxLength]="75"
+    [(ngModel)]="service.title"
+  ></hg-form-input>
+  <hg-form-textarea
+    [label]="'Szolgáltatásod bővebb kifejtése'"
+    [maxLength]="250"
+    [(ngModel)]="service.description"
+  ></hg-form-textarea>
+  <hg-form-price-grid
+    [title]="'Árlista'"
+    [(ngModel)]="service.priceItems"
+  ></hg-form-price-grid>
+
+  <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="auto" fxFlexFill>
+    <div fxLayout="row" fxLayoutGap="1em">
+      <mat-slide-toggle
+        [(ngModel)]="service.isVisible"
+      ></mat-slide-toggle>
+      <span [style.fontSize]="'1.1em'">Szolgáltatás megjelenítve</span>
+    </div>
+    <button class="card__save-button" mat-stroked-button [mat-dialog-close]="service">
+        Változtatások jóváhagyása
+      </button>
+  </div>
 </div>
