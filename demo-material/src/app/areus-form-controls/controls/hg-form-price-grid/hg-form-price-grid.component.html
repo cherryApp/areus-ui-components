@@ -6,6 +6,12 @@
   fxLayoutGap.xs="0px"
 >
   <div class="field__label"> {{ title }} </div>
+  <div class="field__newitem" fxLayout="row" fxLayoutAlign="start center" fxFlexFill fxLayoutGap="1.5em">
+    <button (click)="onInsert()" class="field__newitem-button" mat-mini-fab>
+      <mat-icon>add</mat-icon>
+    </button>
+    <div>Új tétel hozzáadása</div>
+  </div>
   <div class="field__inner">
     <div
       *ngFor="let item of controlList"

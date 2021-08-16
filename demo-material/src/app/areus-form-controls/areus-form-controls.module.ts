@@ -10,6 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ArFormInputComponent } from './controls/ar-form-input/ar-form-input.component';
@@ -35,6 +36,7 @@ import { HgFormPriceGridComponent } from './controls/hg-form-price-grid/hg-form-
     MatSlideToggleModule,
     MatDialogModule,
     MatButtonModule,
+    MatIconModule,
     MatFormFieldModule,
     MatInputModule,
   ],

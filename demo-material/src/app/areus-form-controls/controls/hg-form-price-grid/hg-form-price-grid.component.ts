@@ -91,6 +91,18 @@ export class HgFormPriceGridComponent implements ControlValueAccessor, OnInit {
     item.title = (event.target as HTMLInputElement).value || '';
   }
 
+  onInsert(): void {
+    this.controlList.unshift({
+      title: 'Új tétel',
+      price: 0,
+      itemType: 'mosás',
+      value: true,
+      key: this.getKey(),
+    });
+    this.rebuild(this.controlList);
+    // this.onChange(this.value);
+  }
+
   onChange = (newValue: IFormGridItem[]) => {};
   onTouched = () => { };
   writeValue(newValue: IFormGridItem[]): void {

@@ -15,6 +15,37 @@ $slide-checked-color: rgb(228, 13, 113);
     margin: 0 0 .5em 0;
   }
 
+  .field__newitem {
+    position: relative;
+    font-weight: bold;
+    div {
+      display: inline-block;
+      line-height: 2em;
+      height: 2em;
+      position: relative;
+      top: -0.4em;
+    }
+    .field__newitem-button.mat-mini-fab {
+      box-shadow: none;
+      padding-top: 0;
+      height: 2em;
+      width: 2em;
+      margin-right: 1em;
+      .mat-button-wrapper {
+        position: relative;
+        top: -5px;
+        height: 10px;
+      }
+      .mat-icon {
+        color: white;
+        font-weight: 800;
+        position: relative;
+        top: -0.23em;
+        font-size: 1.3em;
+      }
+    }
+  }
+
   .field__inner {
     padding: 1em 0;
     position: relative;
