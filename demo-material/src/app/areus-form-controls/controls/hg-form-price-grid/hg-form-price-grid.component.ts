@@ -85,10 +85,12 @@ export class HgFormPriceGridComponent implements ControlValueAccessor, OnInit {
 
   onPriceChanged(event: any, item: IFormGridItem): void {
     item.price = parseInt((event.target as HTMLInputElement).value) || 0;
+    this.onChange(this.value);
   }
 
   onTitleChanged(event: any, item: IFormGridItem): void {
     item.title = (event.target as HTMLInputElement).value || '';
+    this.onChange(this.value);
   }
 
   onInsert(): void {

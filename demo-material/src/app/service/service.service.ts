@@ -14,21 +14,53 @@ export interface IBaseService {
 })
 export class ServiceService {
 
-  private service: IBaseService = {
-    title: 'Autó és egyéb járműfényezést vállalok',
-    description: `Édesapámtól ellesett fortélyokkal és trükkökkel igazán
-vagány, egyedi külsőt varázsolok az autódnak. Külön
-szenvedélyem az old timerek javítása, fényezése. Ezen
-felül informatikában is jártas vagyok.`,
-    priceItems: [
-      { title: 'Mosás', value: true, itemType: 'mosás', price: 4900 },
-      { title: 'Belső takarítás', value: false, itemType: 'autó', price: 20000 },
-      { title: 'Egyedi fényezés', value: true, itemType: 'autó', price: 20000 },
-    ],
-    isVisible: true,
+  private titles: string[] = [
+    'Autófényezést vállalok',
+    'Gázszerelés garanciával',
+    'Takarítás és Rendrakás',
+  ];
+
+  private descriptions: string[] = [
+    'Kiváló alapanyagokkal dolgozunk vevőink elégedettségére',
+    'Soha nem fogja megbánni ha minket választ',
+    'A legjobb árakon garanciával',
+  ];
+
+  private priceTitles: string[] = [
+    'Mosás',
+    'Takarítás',
+    'Polírozás',
+    'Alvázmosás',
+    'Porszívózás',
+  ];
+
+  private get service(): IBaseService {
+    return {
+      title: this.getRandomItem(this.titles),
+      description: this.getRandomItem(this.descriptions),
+      priceItems: [
+        {
+          title: this.getRandomItem(this.priceTitles),
+          value: [true, false][Math.floor(Math.random()*2)],
+          itemType: ['mosás', 'autó', 'ház'][Math.floor(Math.random()*3)],
+          price: Math.floor(Math.random() * 10**4)
+        },
+        {
+          title: this.getRandomItem(this.priceTitles),
+          value: [true, false][Math.floor(Math.random()*2)],
+          itemType: ['mosás', 'autó', 'ház'][Math.floor(Math.random()*3)],
+          price: Math.floor(Math.random() * 10**4)
+        },
+      ],
+      isVisible: [true, false][Math.floor(Math.random()*2)],
+    }
   };
 
   constructor() { }
+
+  getRandomItem(arrayLike: any[]): any {
+    return arrayLike[Math.floor(Math.random() * arrayLike.length)];
+  }
 
   getAll(): Observable<IBaseService[]> {
     return of([this.service]);

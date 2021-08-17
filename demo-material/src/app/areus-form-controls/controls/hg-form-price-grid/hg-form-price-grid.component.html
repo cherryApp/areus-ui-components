@@ -6,8 +6,18 @@
   fxLayoutGap.xs="0px"
 >
   <div class="field__label"> {{ title }} </div>
-  <div class="field__newitem" fxLayout="row" fxLayoutAlign="start center" fxFlexFill fxLayoutGap="1.5em">
-    <button (click)="onInsert()" class="field__newitem-button" mat-mini-fab>
+  <div
+    (click)="onInsert()"
+    class="field__newitem"
+    fxLayout="row"
+    fxLayoutAlign="start center"
+    fxFlexFill
+    fxLayoutGap="1.5em"
+  >
+    <button
+      class="field__newitem-button"
+      mat-mini-fab
+    >
       <mat-icon>add</mat-icon>
     </button>
     <div>Új tétel hozzáadása</div>
@@ -19,13 +29,29 @@
       [class.unchecked]="!item.value"
     >
       <div class="field__inner-title">
-        <input [disabled]="!item.value" (input)="onTitleChanged($event, item)" [value]="item.title" type="numer">
+        <input
+          [disabled]="!item.value"
+          (input)="onTitleChanged($event, item)"
+          [value]="item.title"
+          type="numer"
+        >
       </div>
       <div class="field__inner-right">
-        <div class="field__inner-price" *ngIf="item.price !== undefined">
-          <input [disabled]="!item.value" (input)="onPriceChanged($event, item)" [value]="item.price" type="numer"> <sup>Ft</sup>
+        <div
+          class="field__inner-price"
+          *ngIf="item.price !== undefined"
+        >
+          <input
+            [disabled]="!item.value"
+            (input)="onPriceChanged($event, item)"
+            [value]="item.price"
+            type="numer"
+          > <sup>Ft</sup>
         </div>
-        <div class="field__inner-type" *ngIf="item.itemType">/ {{ item.itemType }} </div>
+        <div
+          class="field__inner-type"
+          *ngIf="item.itemType"
+        >/ {{ item.itemType }} </div>
         <mat-slide-toggle
           (change)="onChange(value)"
           [formControlName]="item.key || ''"
