@@ -102,7 +102,6 @@ export class HgFormPriceGridComponent implements ControlValueAccessor, OnInit {
       key: this.getKey(),
     });
     this.rebuild(this.controlList);
-    // this.onChange(this.value);
   }
 
   onChange = (newValue: IFormGridItem[]) => {};
