@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './page/home/home.component';
 import { TestComponent } from './page/test/test.component';
 import { OutletHostDirective } from './common/outlet-host.directive';
+import { RegisterComponent } from './page/register/register.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { OutletHostDirective } from './common/outlet-host.directive';
     HomeComponent,
     TestComponent,
     OutletHostDirective,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

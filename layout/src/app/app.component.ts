@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ComponentFactoryResolver, OnInit, ViewChildren } from '@angular/core';
 import { ActivatedRoute, ActivationEnd, NavigationEnd, Router } from '@angular/router';
 import { OutletHostDirective } from './common/outlet-host.directive';
+import { tap } from 'rxjs/operators';
 
 export interface ComponentType<T = any> {
   new (...args: any[]): T;
@@ -18,16 +19,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   viewInited: boolean = false;
 
-  constructor(
-    private ar: ActivatedRoute,
-    private router: Router,
-    private componentFactoryResolver: ComponentFactoryResolver,
-  ) { }
-
-  ngOnInit() {
-    this.router.events.subscribe((routerEvent) => {
+  events = this.router.events.pipe(
+    tap((routerEvent) => {
       if (routerEvent instanceof ActivationEnd) {
-        console.log(routerEvent.snapshot.data);
         this.slots = routerEvent.snapshot.data.slots || {};
       }
 
@@ -36,7 +30,16 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.setOutlets();
         }
       }
-    });
+    }),
+  );
+
+  constructor(
+    private router: Router,
+    private componentFactoryResolver: ComponentFactoryResolver,
+  ) { }
+
+  ngOnInit() {
+    this.events.subscribe( () => {} );
   }
 
   ngAfterViewInit() {
